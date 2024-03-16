@@ -1,6 +1,6 @@
 [
   {
     "ParameterKey": "BucketName",
-    "ParameterValue": "meu-s3-prod"
+    "ParameterValue": "meu-s3-prod-1234567"
   }
 ]
