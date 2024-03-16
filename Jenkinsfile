@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Variáveis estáticas que podem ser definidas aqui ou dinamicamente dentro dos stages
-        STACK_NAME = 'nome-da-sua-stack'
+        STACK_NAME = 'my-bucket-s3'
         TEMPLATE_FILE_URL = 'https://raw.githubusercontent.com/robarros/cloudformation-template/main/s3.yaml'
     }
 
