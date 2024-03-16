@@ -43,14 +43,16 @@ pipeline {
             }
         }
 
+
         stage('Deploy') {
             steps {
-                script {
-                    // Usa as variáveis de ambiente configuradas anteriormente
+                withAWS(credentials: 'aws-keys', region: 'us-east-1') {
                     sh "aws cloudformation deploy --template-file s3-bucket-template.yaml --stack-name ${env.STACK_NAME} --parameter-overrides file://${env.PARAMS_FILE} --region ${env.AWS_REGION} --capabilities CAPABILITY_IAM"
                 }
             }
         }
+
+
     }
 
     post {
