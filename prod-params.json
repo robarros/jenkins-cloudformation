@@ -1,0 +1,6 @@
+[
+  {
+    "ParameterKey": "BucketName",
+    "ParameterValue": "meu-s3-prod"
+  }
+]
