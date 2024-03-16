@@ -24,11 +24,11 @@ pipeline {
                     if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME.startsWith('feature/')) {
                         env.AWS_ACCOUNT = config.deploy.aws.dev.account
                         env.AWS_REGION = config.deploy.aws.dev.region
-                        env.PARAMS_FILE = 'caminho/para/dev-params.json'
+                        env.PARAMS_FILE = 'dev-params.json'
                     } else {
                         env.AWS_ACCOUNT = config.deploy.aws.prod.account
                         env.AWS_REGION = config.deploy.aws.prod.region
-                        env.PARAMS_FILE = 'caminho/para/prod-params.json'
+                        env.PARAMS_FILE = 'prod-params.json'
                     }
                 }
             }
