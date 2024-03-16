@@ -2,8 +2,8 @@ deploy:
   aws:
     dev:
       account: "dev"
-      region: sa-east-1
+      region: us-east-1
     prod:
       account: "prod"
-      region: sa-east-1
+      region: us-east-1
 
