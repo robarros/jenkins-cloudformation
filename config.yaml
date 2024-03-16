@@ -4,6 +4,6 @@ deploy:
       account: "dev"
       region: sa-east-1
     prod:
-      account: "dev"
+      account: "prod"
       region: sa-east-1
 
