@@ -5,5 +5,5 @@ deploy:
       region: us-east-1
     prod:
       account: "prod"
-      region: us-east-1
+      region: sa-east-1
 

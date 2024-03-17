@@ -33,7 +33,7 @@ pipeline {
                         env.PARAMS_FILE = 'dev-params.json'
                     } else {
                         env.AWS_ACCOUNT = config.deploy.aws.prod.account
-                        env.AWS_REGION = config.deploy.aws.prod.region
+                        env.AWS_REGION = config.deploy.aws.prod.region 
                         env.PARAMS_FILE = 'prod-params.json'
                     }
                 }
@@ -62,7 +62,7 @@ pipeline {
 
     post {
         success {
-            echo 'Deploy realizado com sucesso em região ${env.AWS_REGION} para a conta ${env.AWS_ACCOUNT}.'
+            echo 'Deploy realizado com sucesso'
         }
         failure {
             echo 'Falha no deploy.'
