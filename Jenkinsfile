@@ -6,7 +6,19 @@ pipeline {
         STACK_NAME = 'my-bucket-s3'
         TEMPLATE_FILE_URL = 'https://raw.githubusercontent.com/robarros/cloudformation-template/main/s3.yaml'
     }
-
+    stages {
+        stage('Pre-Clean Workspace') {
+            steps {
+                deleteDir() // Limpa o workspace antes do build
+            }
+        }
+        // Definições de outros estágios (Checkout, Build, Test, etc.)
+        stage('Post-Build Clean Cache') {
+            steps {
+                sh 'rm -rf path/to/your/cache/directory' // Limpa caches específicos após o build
+            }
+        }
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -60,6 +72,10 @@ pipeline {
         }
         failure {
             echo 'Falha no deploy.'
+        }
+        always {
+            // Limpa o workspace após a conclusão do pipeline, independentemente do resultado
+            deleteDir()
         }
     }
 }
